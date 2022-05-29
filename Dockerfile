@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:jammy
 
 MAINTAINER Simon Egli <docker_android_studio_860dd6@egli.online>
 
@@ -36,8 +36,8 @@ USER $USER
 
 WORKDIR /home/$USER
 
-ARG ANDROID_STUDIO_URL=https://dl.google.com/dl/android/studio/ide-zips/3.5.3.0/android-studio-ide-191.6010548-linux.tar.gz
-ARG ANDROID_STUDIO_VERSION=3.5
+ARG ANDROID_STUDIO_URL=https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.2.1.15/android-studio-2021.2.1.15-linux.tar.gz
+ARG ANDROID_STUDIO_VERSION=021.2.1.15
 
 RUN wget "$ANDROID_STUDIO_URL" -O android-studio.tar.gz
 RUN tar xzvf android-studio.tar.gz
