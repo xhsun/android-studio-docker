@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  studio:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        ANDROID_STUDIO_VERSION: "2021.2.1.15"
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix:ro"
+      - "/dev/bus/usb:/dev/bus/usb"
+      - "/.ssh:/home/vscode/.ssh:ro"
+      - "./../:/home/vscode/project"
+    environment:
+      DISPLAY:
+    network_mode: "host"
+    privileged: true
+    group_add:
+      - plugdev
